@@ -1,0 +1,18 @@
+[package]
+name = "flowkit"
+description = "A universal UI workflow library"
+keywords = ["viz", "ui", "workflow", "flow"]
+version = "0.4.2"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+glam.workspace = true
+lyon_path.workspace = true
+smallvec.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,22 @@
+[package]
+name = "bevy_examples"
+publish = false
+edition.workspace = true
+
+[dependencies]
+bevy_flowkit.workspace = true
+bevy_moon.workspace = true
+bevy.workspace = true
+
+# graph
+bevy_prototype_lyon.workspace = true
+petgraph.workspace = true
+
+bevy_pancam.workspace = true
+
+taffy.workspace = true
+tracing = { workspace = true }
+
+[[example]]
+name = "node_based"
+path = "src/node_based.rs"

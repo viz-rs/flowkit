@@ -1,0 +1,22 @@
+[package]
+name = "bevy_flowkit"
+description = "A UI workflow library for Bevy Engine"
+keywords = ["bevy", "workflow", "flow"]
+version = "0.4.2"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+default = []
+
+[dependencies]
+flowkit = { path = "../flowkit", version = "0.4.2" }
+lyon_path.workspace = true
+bevy_math.workspace = true
+bevy_prototype_lyon.workspace = true
+
+[lints]
+workspace = true

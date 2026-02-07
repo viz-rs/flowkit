@@ -1,0 +1,15 @@
+[package]
+name = "gpui_examples"
+publish = false
+edition.workspace = true
+
+[dependencies]
+gpui_flowkit.workspace = true
+
+gpui.workspace = true
+core-text.workspace = true
+glam.workspace = true
+
+[[example]]
+name = "gpui_canvas"
+path = "src/canvas.rs"

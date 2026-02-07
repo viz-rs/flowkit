@@ -1,0 +1,15 @@
+[package]
+name = "makepad_examples"
+publish = false
+edition.workspace = true
+
+[dependencies]
+makepad_flowkit.workspace = true
+makepad_tessellation.workspace = true
+
+makepad-widgets.workspace = true
+glam.workspace = true
+
+[[example]]
+name = "makepad_canvas"
+path = "src/canvas.rs"

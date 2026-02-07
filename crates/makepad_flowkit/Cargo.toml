@@ -1,0 +1,22 @@
+[package]
+name = "makepad_flowkit"
+description = "A UI workflow library for makepad"
+keywords = ["makepad", "workflow", "flow"]
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+default = []
+
+[dependencies]
+flowkit = { path = "../flowkit", version = "0.4.2" }
+makepad_tessellation = { path = "../makepad_tessellation", version = "0.1.0" }
+
+lyon_path.workspace = true
+
+[lints]
+workspace = true

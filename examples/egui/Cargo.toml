@@ -1,0 +1,15 @@
+[package]
+name = "egui_examples"
+publish = false
+edition.workspace = true
+
+[dependencies]
+egui_flowkit.workspace = true
+
+eframe.workspace = true
+env_logger.workspace = true
+glam.workspace = true
+
+[[example]]
+name = "egui_canvas"
+path = "src/canvas.rs"

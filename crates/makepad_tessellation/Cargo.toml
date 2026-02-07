@@ -1,0 +1,19 @@
+[package]
+name = "makepad_tessellation"
+description = "Tessellation of 2D fill and stroke operations for makepad"
+keywords = ["makepad", "tessellation"]
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+makepad-widgets.workspace = true
+lyon_path.workspace = true
+lyon_tessellation.workspace = true
+tracing.workspace = true
+
+[lints]
+workspace = true
