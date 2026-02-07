@@ -10,7 +10,7 @@ A universal UI workflow library.
 Neat, beautiful, and easy to use.
 
 <p align="center">
-  <img alt="A node-based UI example for Bevy Engine" src="./assets/node_based.png" height="350" />
+  <img alt="A node-based UI example for Bevy Engine" src="./assets/node_based.png" />
 </p>
 
 ## Features
@@ -28,13 +28,6 @@ Neat, beautiful, and easy to use.
   - [makepad_flowkit]
 
 - Support SVG's path output
-
-[`EdgeType`]: https://docs.rs/flowkit/latest/flowkit/edge/enum.EdgeType.html
-[`squircle`]: https://www.figma.com/blog/desperately-seeking-squircles/
-[bevy_flowkit]: https://docs.rs/bevy_flowkit
-[egui_flowkit]: https://docs.rs/egui_flowkit
-[gpui_flowkit]: https://docs.rs/gpui_flowkit
-[makepad_flowkit]: https://docs.rs/makepad_flowkit
 
 ## Examples
 
@@ -69,3 +62,10 @@ Except where noted (below and/or in individual files), all code in this reposito
 
 - MIT License ([LICENSE-MIT](LICENSE-MIT) or [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT))
 - Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0))
+
+[`EdgeType`]: https://docs.rs/flowkit/latest/flowkit/edge/enum.EdgeType.html
+[`squircle`]: https://www.figma.com/blog/desperately-seeking-squircles/
+[bevy_flowkit]: https://docs.rs/bevy_flowkit
+[egui_flowkit]: https://docs.rs/egui_flowkit
+[gpui_flowkit]: https://docs.rs/gpui_flowkit
+[makepad_flowkit]: https://docs.rs/makepad_flowkit
