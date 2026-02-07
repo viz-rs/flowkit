@@ -32,6 +32,32 @@ Neat, beautiful, and easy to use.
 [gpui_flowkit]: https://docs.rs/gpui_flowkit
 [makepad_flowkit]: https://docs.rs/makepad_flowkit
 
+## Examples
+
+- [node based](examples/bevy/src/node_based.rs): A node-based UI example for Bevy Engine.
+
+  ```console
+  cargo run --example node_based
+  ```
+
+- [egui canvas](examples/egui/src/canvas.rs): A simple flow chat for egui.
+
+  ```console
+  cargo run --example egui_canvas
+  ```
+
+- [gpui canvas](examples/gpui/src/canvas.rs): A simple flow chat for gpui.
+
+  ```console
+  cargo run --example gpui_canvas
+  ```
+
+- [makepad canvas](examples/makepad/src/canvas.rs): A simple flow chat for makepad.
+
+  ```console
+  cargo run --example makepad_canvas
+  ```
+
 ## License
 
 Flowkit is free, open source and permissively licensed!
