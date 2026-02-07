@@ -4,6 +4,7 @@ members = [
   "crates/*",
   "examples/*",
 ]
+excludes = ["assets"]
 
 [workspace.package]
 authors = ["Fangdun Tsai <fundon@pindash.io>"]

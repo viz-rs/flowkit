@@ -9,6 +9,10 @@ A universal UI workflow library.
 
 Neat, beautiful, and easy to use.
 
+<p align="center">
+  <img alt="A node-based UI example for Bevy Engine" src="./assets/node_based.png" height="350" />
+</p>
+
 ## Features
 
 - Support multiple kinds of [`EdgeType`]s:
