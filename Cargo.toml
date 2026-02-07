@@ -7,14 +7,14 @@ members = [
 
 [workspace.package]
 authors = ["Fangdun Tsai <fundon@pindash.io>"]
-categories = ["game-engines", "graphics", "gui", "rendering"]
-description = "A visual creative space"
+categories = ["graphics", "gui", "workflow"]
+description = "A universal UI workflow library"
 edition = "2024"
-homepage = "https://viz.rs"
-keywords = ["bevy", "viz", "moon"]
+homepage = "https://flowkit.viz.rs"
+keywords = ["bevy", "viz", "flowkit"]
 license = "MIT OR Apache-2.0"
 publish = false
-repository = "https://github.com/viz-rs/viz"
+repository = "https://github.com/viz-rs/flowkit"
 version = "0.1.0"
 
 [workspace.dependencies]
@@ -39,11 +39,7 @@ smallvec = { version = "1.0", features = ["union", "const_new"] }
 taffy = "0.9"
 glam = "0.30"
 
-accesskit = "0.21"
-bytemuck = { version = "1.5", features = ["derive"] }
-derive_more = { version = "2", default-features = false, features = ["from"] }
 serde = { version = "1", features = ["derive"] }
-thiserror = { version = "2", default-features = false }
 tracing = { version = "0.1", default-features = false, features = ["std"] }
 
 bevy_pancam = "0.20.0"

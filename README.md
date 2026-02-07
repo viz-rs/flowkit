@@ -11,25 +11,22 @@ Neat, beautiful, and easy to use.
 
 ## Features
 
-* Support multiple kinds of [`EdgeType`]s:
-
+- Support multiple kinds of [`EdgeType`]s:
   - **SmoothStep**: smoothing and rounding corners by the [`squircle`]
   - **StraightStep**: straight steps
   - **Straight**: a straight line
   - **Curve**: a bezier curve
 
-* Adapt to multiple frameworks
-
+- Adapt to multiple frameworks
   - [bevy_flowkit]
   - [egui_flowkit]
   - [gpui_flowkit]
   - [makepad_flowkit]
 
-* Support SVG's path output
+- Support SVG's path output
 
 [`EdgeType`]: https://docs.rs/flowkit/latest/flowkit/edge/enum.EdgeType.html
 [`squircle`]: https://www.figma.com/blog/desperately-seeking-squircles/
-
 [bevy_flowkit]: https://docs.rs/bevy_flowkit
 [egui_flowkit]: https://docs.rs/egui_flowkit
 [gpui_flowkit]: https://docs.rs/gpui_flowkit
