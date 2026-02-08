@@ -24,8 +24,12 @@ use crate::vertex::VertexBuffers;
 /// | 1     | 5     | b      | vertices[b] | top-right    |
 /// | 2     | 1     | c      | vertices[c] | bottom-right |
 /// | 3     | 0,3   | d      | vertices[d] | bottom-left  |
-/// ```
 ///
+/// 2. Draws two lines:
+///
+/// `a -> c`
+/// `b -> d`
+/// ```
 pub trait DrawPath {
     fn draw_with(&mut self, cx: &mut Cx2d, buffers: VertexBuffers, color: Vec4, width: f64);
 }
