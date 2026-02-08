@@ -2,7 +2,7 @@
 name = "gpui_flowkit"
 description = "A UI workflow library for gpui"
 keywords = ["gpui", "workflow", "flow"]
-version = "0.2.2"
+version = "0.2.3"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true

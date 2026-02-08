@@ -10,7 +10,7 @@ A universal UI workflow library.
 Neat, beautiful, and easy to use.
 
 <p align="center">
-  <img alt="A node-based UI example for Bevy Engine" src="./assets/node_based.png" />
+  <img alt="A node-based UI example for Bevy Engine" src="https://raw.githubusercontent.com/viz-rs/flowkit/main/assets/node_based.png" />
 </p>
 
 ## Features

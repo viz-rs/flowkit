@@ -226,7 +226,7 @@ impl Widget for FlowkitCanvas {
     }
 }
 
-#[derive(Live, LiveHook)]
+#[derive(Default, Live, LiveHook)]
 struct App {
     #[live]
     ui: WidgetRef,
@@ -247,14 +247,6 @@ impl AppMain for App {
 
 impl MatchEvent for App {
     fn match_event(&mut self, _cx: &mut Cx, _event: &Event) {}
-}
-
-impl Default for App {
-    fn default() -> Self {
-        Self {
-            ui: WidgetRef::default(),
-        }
-    }
 }
 
 app_main!(App);

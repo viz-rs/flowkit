@@ -1232,7 +1232,7 @@ dependencies = [
 
 [[package]]
 name = "bevy_flowkit"
-version = "0.4.2"
+version = "0.4.3"
 dependencies = [
  "bevy_math",
  "bevy_prototype_lyon",
@@ -3537,7 +3537,7 @@ dependencies = [
 
 [[package]]
 name = "egui_flowkit"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "egui",
  "flowkit",
@@ -3951,7 +3951,7 @@ checksum = "8bf7cc16383c4b8d58b9905a8509f02926ce3058053c056376248d958c9df1e8"
 
 [[package]]
 name = "flowkit"
-version = "0.4.2"
+version = "0.4.3"
 dependencies = [
  "glam",
  "lyon_path",
@@ -4642,7 +4642,7 @@ dependencies = [
 
 [[package]]
 name = "gpui_flowkit"
-version = "0.2.2"
+version = "0.2.3"
 dependencies = [
  "flowkit",
  "glam",

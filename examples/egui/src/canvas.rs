@@ -34,16 +34,9 @@ fn main() -> eframe::Result {
     )
 }
 
+#[derive(Default)]
 struct FlowkitCanvas {
     paint_connections: PaintConnections,
-}
-
-impl Default for FlowkitCanvas {
-    fn default() -> Self {
-        Self {
-            paint_connections: PaintConnections::default(),
-        }
-    }
 }
 
 impl eframe::App for FlowkitCanvas {

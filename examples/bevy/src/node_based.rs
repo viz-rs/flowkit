@@ -553,6 +553,7 @@ fn setup(
     ]);
 }
 
+#[allow(clippy::type_complexity)]
 fn draw_edges(
     mut commands: Commands,
     nodes: Query<&Transform, Or<(With<Node>, With<Mesh2d>, With<Text2d>)>>,
@@ -570,11 +571,13 @@ fn draw_edges(
         return Ok(());
     }
 
-    let mut stroke = Stroke::default();
-    stroke.options = StrokeOptions::default()
-        .with_line_width(2.0)
-        .with_line_join(LineJoin::Round)
-        .with_line_cap(LineCap::Round);
+    let stroke = Stroke {
+        options: StrokeOptions::default()
+            .with_line_width(2.0)
+            .with_line_join(LineJoin::Round)
+            .with_line_cap(LineCap::Round),
+        ..Default::default()
+    };
 
     let graph = flow_graph.into_inner().as_ref();
 
@@ -657,6 +660,7 @@ fn draw_edges(
     Ok(())
 }
 
+#[allow(clippy::needless_return)]
 fn toggle_pancam(mut query: Query<&mut PanCamera>, keys: Res<ButtonInput<KeyCode>>) {
     // Toggle Panning with Spacebar
     if keys.just_pressed(KeyCode::Space) {
