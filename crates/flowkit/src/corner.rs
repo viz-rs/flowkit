@@ -1,9 +1,8 @@
 use std::ops::Sub;
 
 use glam::Vec2;
-use lyon_path::{BuilderImpl, builder::WithSvg, math::Angle};
 
-use crate::{utils::Convert, winding_order::WindingOrder};
+use crate::winding_order::WindingOrder;
 
 /// Identifies a corner of a rectangle.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -200,31 +199,4 @@ pub struct Squircle {
     pub center: Vec2,
     pub radii: Vec2,
     pub sweep_angle: f32,
-}
-
-impl Squircle {
-    #[inline]
-    pub fn with_svg(self, builder: &mut WithSvg<BuilderImpl>) {
-        let Self {
-            h,
-            v,
-            center,
-            radii,
-            sweep_angle,
-        } = self;
-
-        let [p0, ctrl1, ctrl2, to0] = h.convert();
-        let [to1, ctrl4, ctrl3, p1] = v.convert();
-
-        builder.line_to(p0);
-        builder.cubic_bezier_to(ctrl1, ctrl2, to0);
-        builder.arc(
-            center.convert(),
-            radii.convert(),
-            Angle::radians(sweep_angle),
-            Angle::radians(0.0),
-        );
-        builder.line_to(p1);
-        builder.cubic_bezier_to(ctrl3, ctrl4, to1);
-    }
 }

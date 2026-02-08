@@ -3,11 +3,10 @@ use lyon_path::{BuilderImpl, builder::WithSvg};
 use smallvec::SmallVec;
 
 use crate::{
-    corner::{Corner, CornerPathParams},
     curve::calculate_control_point,
     edge::{EdgePath, EdgePoint, EdgeType},
-    utils::{Convert, select, visible_area},
-    winding_order::WindingOrder,
+    extend::ExtendFrom,
+    utils::{select, visible_area},
 };
 
 /// A path builder.
@@ -22,12 +21,10 @@ pub struct PathBuilder {
 impl PathBuilder {
     /// If `Y-Axis` is down, should set `flip_y` to `true`.
     ///
-    /// ```text
     /// | Y-Axis | Framework                  |
     /// |--------|----------------------------|
     /// | Up     | Bevy world                 |
     /// | Down   | egui, gpui, makepad screen |
-    /// ```
     #[inline]
     pub fn new(
         source: EdgePoint,
@@ -186,84 +183,15 @@ impl PathBuilder {
 
         points
     }
-
-    #[inline]
-    fn smooth_with_svg(self, builder: &mut WithSvg<BuilderImpl>) {
-        let Self { points, offset, .. } = self;
-        let len = points.len();
-
-        if len < 2 {
-            return;
-        }
-
-        builder.move_to(points[0].convert());
-
-        // @todo(fundon): should be a configuration
-        let smoothness = 0.6;
-        let half_offset = offset * 0.5;
-
-        for window in points.windows(3) {
-            let [prev, current, next] = window[..] else {
-                break;
-            };
-
-            let rect = (next - prev).abs();
-            let max_radius = rect.x.min(rect.y) * 0.5;
-
-            // 5.0 by default
-            // @todo(fundon): should be a configuration
-            let corner_radius = max_radius.min(half_offset);
-
-            CornerPathParams::new(corner_radius, max_radius, smoothness)
-                .squircle(
-                    current,
-                    Corner::calculate(prev, current, next),
-                    WindingOrder::calculate(prev, current, next),
-                )
-                .with_svg(builder);
-        }
-
-        builder.line_to(points[len - 1].convert());
-    }
-
-    #[inline]
-    pub fn with_svg(self, builder: &mut WithSvg<BuilderImpl>) {
-        match self.edge_type {
-            EdgeType::Straight => {
-                let [from, to] = self.points[..] else {
-                    panic!("Straight path needs tow points.");
-                };
-                builder.move_to(from.convert());
-                builder.line_to(to.convert());
-            }
-            EdgeType::Curve => {
-                let [from, ctrl1, ctrl2, to] = self.points[..] else {
-                    panic!("Curve path needs four points.");
-                };
-                builder.move_to(from.convert());
-                builder.cubic_bezier_to(ctrl1.convert(), ctrl2.convert(), to.convert());
-            }
-            EdgeType::StraightStep => {
-                for point in self.points {
-                    builder.line_to(point.convert());
-                }
-            }
-            EdgeType::SmoothStep => {
-                self.smooth_with_svg(builder);
-            }
-        }
-    }
 }
 
 impl From<(EdgePath, bool)> for PathBuilder {
     /// If `Y-Axis` is down, should set `flip_y` to `true`.
     ///
-    /// ```text
     /// | Y-Axis | Framework                  |
     /// |--------|----------------------------|
     /// | Up     | Bevy world                 |
     /// | Down   | egui, gpui, makepad screen |
-    /// ```
     fn from((path, flip_y): (EdgePath, bool)) -> Self {
         Self::new(
             path.source,
@@ -279,7 +207,7 @@ impl From<(EdgePath, bool)> for PathBuilder {
 impl From<PathBuilder> for WithSvg<BuilderImpl> {
     fn from(path: PathBuilder) -> Self {
         let mut builder = BuilderImpl::new().with_svg();
-        path.with_svg(&mut builder);
+        builder.extend(path);
         builder
     }
 }

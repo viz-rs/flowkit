@@ -8,28 +8,30 @@ use crate::vertex::VertexBuffers;
 ///
 /// 1. Extracts 4 vertices' positions from two triangles.
 ///
-/// ```text
 /// | Indices   | Ordered       | Ordered       |
 /// |-----------|---------------|---------------|
 /// | `quad_2d` | `0 1 2 2 3 0` | `a b c c d a` |
 /// | `buffers` | `3 2 0 3 0 1` | `d c a d a b` |
 ///
+/// ```text
 /// 0┌─────┐1   a┌─────┐b
 ///  │     │     │     │
 /// 3└─────┘2   d└─────┘c
+/// ```
 ///
-/// | Index | Seq   | Indice | Vertex      | Corner       |
-/// |-------|-------|--------|-------------|--------------|
-/// | 0     | 2,4   | a      | vertices[a] | top-left     |
-/// | 1     | 5     | b      | vertices[b] | top-right    |
-/// | 2     | 1     | c      | vertices[c] | bottom-right |
-/// | 3     | 0,3   | d      | vertices[d] | bottom-left  |
+/// | Index | Seq   | Indice | Vertex        | Corner       |
+/// |-------|-------|--------|---------------|--------------|
+/// | 0     | 2,4   | a      | `vertices[a]` | top-left     |
+/// | 1     | 5     | b      | `vertices[b]` | top-right    |
+/// | 2     | 1     | c      | `vertices[c]` | bottom-right |
+/// | 3     | 0,3   | d      | `vertices[d]` | bottom-left  |
 ///
 /// 2. Draws two lines:
 ///
-/// `a -> c`
-/// `b -> d`
-/// ```
+/// | Index | Line     |
+/// | ----- | -------- |
+/// | 0     | `a -> c` |
+/// | 1     | `b -> d` |
 pub trait DrawPath {
     fn draw_with(&mut self, cx: &mut Cx2d, buffers: VertexBuffers, color: Vec4, width: f64);
 }
