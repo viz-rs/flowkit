@@ -5,6 +5,14 @@ use glam::Vec2;
 use crate::winding_order::WindingOrder;
 
 /// Identifies a corner of a rectangle.
+///
+/// ```text
+///  [-1.0, 1.0]       [1.0, 1.0]
+///      TopLeft┌─────┐TopRight
+///             │     │
+///   BottomLeft└─────┘BottomRight
+/// [-1.0, -1.0]       [1.0, -1.0]
+/// ```
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Corner {
     TopRight,

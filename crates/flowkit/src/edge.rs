@@ -13,6 +13,16 @@ pub enum EdgeType {
 }
 
 /// Identifies an edge anchor of a rectangle.
+///
+/// ```text
+///                 [0.0, 1.0]
+///                    Top
+///                  ┌─────┐
+/// [-1.0, 0.0] Left │     │ Right [1.0, 0.0]
+///                  └─────┘
+///                   Bottom
+///                 [0.0, -1.0]
+/// ```
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EdgeAnchor {
     Top,
