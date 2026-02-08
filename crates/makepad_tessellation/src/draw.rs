@@ -9,26 +9,23 @@ use crate::vertex::VertexBuffers;
 /// 1. Extracts 4 vertices' positions from two triangles.
 ///
 /// ```text
-/// ----------------- | ------------- | ------------
-/// `quad_2d.indices` | `0 1 2 2 3 0` | `a b c c d a`
-/// `buffers.indices` | `3 2 0 3 0 1` | `d c a d a b`
+/// | Indices   | Ordered       | Ordered       |
+/// |-----------|---------------|---------------|
+/// | `quad_2d` | `0 1 2 2 3 0` | `a b c c d a` |
+/// | `buffers` | `3 2 0 3 0 1` | `d c a d a b` |
 ///
-/// 0  1   a  b
-///  []     []
-/// 3  2   d  c
+/// 0┌─────┐1   a┌─────┐b
+///  │     │     │     │
+/// 3└─────┘2   d└─────┘c
 ///
-/// ----- | ------ | ----------- | -------
-/// index | indice |   vertex    | corner
-///  2|4  |   a    | vertices[a] | top-left
-///   5   |   b    | vertices[b] | top-right
-///   1   |   c    | vertices[c] | bottom-right
-///  0|3  |   d    | vertices[d] | bottom-left
-///
-/// 2. Draws two lines:
-///
-/// `a -> c`
-/// `b -> d`
+/// | Index | Seq   | Indice | Vertex      | Corner       |
+/// |-------|-------|--------|-------------|--------------|
+/// | 0     | 2,4   | a      | vertices[a] | top-left     |
+/// | 1     | 5     | b      | vertices[b] | top-right    |
+/// | 2     | 1     | c      | vertices[c] | bottom-right |
+/// | 3     | 0,3   | d      | vertices[d] | bottom-left  |
 /// ```
+///
 pub trait DrawPath {
     fn draw_with(&mut self, cx: &mut Cx2d, buffers: VertexBuffers, color: Vec4, width: f64);
 }
