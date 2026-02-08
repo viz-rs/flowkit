@@ -8,7 +8,7 @@ use lyon_tessellation::{
 
 use crate::Convert;
 
-/// The index type of a epaint [`Mesh`](epaint::Mesh).
+/// The index type of a epaint [`Mesh`](egui::Mesh).
 type IndexType = u32;
 /// Lyon's [`VertexBuffers`] generic data type defined for [`Vertex`].
 pub type VertexBuffers = tess::VertexBuffers<Vertex, IndexType>;

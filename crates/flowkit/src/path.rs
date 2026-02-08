@@ -226,7 +226,7 @@ impl PathBuilder {
     }
 
     #[inline]
-    pub fn with_svg(self, mut builder: &mut WithSvg<BuilderImpl>) {
+    pub fn with_svg(self, builder: &mut WithSvg<BuilderImpl>) {
         match self.edge_type {
             EdgeType::Straight => {
                 let [from, to] = self.points[..] else {
@@ -248,7 +248,7 @@ impl PathBuilder {
                 }
             }
             EdgeType::SmoothStep => {
-                self.smooth_with_svg(&mut builder);
+                self.smooth_with_svg(builder);
             }
         }
     }
