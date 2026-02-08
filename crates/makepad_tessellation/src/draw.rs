@@ -8,7 +8,7 @@ use crate::vertex::VertexBuffers;
 ///
 /// 1. Extracts 4 vertices' positions from two triangles.
 ///
-/// | Indices   | Ordered       | Ordered       |
+/// | Indices   | Ordered       | Sequence      |
 /// |-----------|---------------|---------------|
 /// | `quad_2d` | `0 1 2 2 3 0` | `a b c c d a` |
 /// | `buffers` | `3 2 0 3 0 1` | `d c a d a b` |
