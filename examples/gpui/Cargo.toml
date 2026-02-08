@@ -7,8 +7,10 @@ edition.workspace = true
 gpui_flowkit.workspace = true
 
 gpui.workspace = true
-core-text.workspace = true
 glam.workspace = true
+
+[target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
+core-text.workspace = true
 
 [[example]]
 name = "gpui_canvas"
