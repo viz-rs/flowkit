@@ -58,10 +58,10 @@ env_logger = { version = "0.11", features = ["auto-color", "humantime"] }
 # gpui
 gpui = "0.2"
 # https://github.com/zed-industries/zed/issues/47168
-core-text = "=21"
+core-text = "=21.0"
 
 # makepad
-makepad-widgets = { git = "https://github.com/makepad/makepad", branch = "dev", features = ["serde"] }
+makepad-widgets = { git = "https://github.com/makepad/makepad.git", branch = "dev", features = ["serde"] }
 
 [workspace.lints]
 
