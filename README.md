@@ -37,19 +37,19 @@ Neat, beautiful, and easy to use.
   cargo run --example node_based
   ```
 
-- [egui canvas](examples/egui/src/canvas.rs): A simple flow chat for egui.
+- [egui canvas](examples/egui/src/canvas.rs): A simple flow chart for egui.
 
   ```console
   cargo run --example egui_canvas
   ```
 
-- [gpui canvas](examples/gpui/src/canvas.rs): A simple flow chat for gpui.
+- [gpui canvas](examples/gpui/src/canvas.rs): A simple flow chart for gpui.
 
   ```console
   cargo run --example gpui_canvas
   ```
 
-- [makepad canvas](examples/makepad/src/canvas.rs): A simple flow chat for makepad.
+- [makepad canvas](examples/makepad/src/canvas.rs): A simple flow chart for makepad.
 
   ```console
   cargo run --example makepad_canvas
