@@ -119,7 +119,7 @@ jobs:
           save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Install build dependencies
-        run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev libwayland-dev
+        run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev libwayland-dev libxkbcommon-x11-dev
 
       - name: Run tests
         run: cargo test --locked --package flowkit --package bevy_flowkit --package egui_flowkit --package gpui_flowkit --profile ci --no-fail-fast
