@@ -5,7 +5,7 @@ use smallvec::SmallVec;
 use crate::{
     curve::calculate_control_point,
     edge::{EdgePath, EdgePoint, EdgeType},
-    extend::ExtendFrom,
+    extend_from::ExtendFrom,
     utils::{select, visible_area},
 };
 
@@ -207,7 +207,7 @@ impl From<(EdgePath, bool)> for PathBuilder {
 impl From<PathBuilder> for WithSvg<BuilderImpl> {
     fn from(path: PathBuilder) -> Self {
         let mut builder = BuilderImpl::new().with_svg();
-        builder.extend(path);
+        builder.extend_from(path);
         builder
     }
 }

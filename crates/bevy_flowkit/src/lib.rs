@@ -1,5 +1,5 @@
 use bevy_prototype_lyon::prelude::Geometry;
-use flowkit::extend::ExtendFrom;
+use flowkit::extend_from::ExtendFrom;
 use lyon_path::{BuilderImpl, builder::WithSvg};
 
 pub use flowkit::{
@@ -26,6 +26,6 @@ impl From<EdgePath> for Connection {
 
 impl Geometry<WithSvg<BuilderImpl>> for Connection {
     fn add_geometry(&self, builder: &mut WithSvg<BuilderImpl>) {
-        builder.extend(PathBuilder::from((self.0, false)));
+        builder.extend_from(PathBuilder::from((self.0, false)));
     }
 }

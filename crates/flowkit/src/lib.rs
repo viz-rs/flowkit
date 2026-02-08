@@ -3,7 +3,7 @@
 pub mod corner;
 pub mod curve;
 pub mod edge;
-pub mod extend;
+pub mod extend_from;
 pub mod path;
 pub mod utils;
 pub mod winding_order;

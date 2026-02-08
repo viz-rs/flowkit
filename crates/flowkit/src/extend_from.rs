@@ -10,11 +10,11 @@ use crate::{
 
 // Appends a value to a builder.
 pub trait ExtendFrom<T> {
-    fn extend(&mut self, value: T);
+    fn extend_from(&mut self, value: T);
 }
 
 impl ExtendFrom<Squircle> for WithSvg<BuilderImpl> {
-    fn extend(&mut self, squircle: Squircle) {
+    fn extend_from(&mut self, squircle: Squircle) {
         let Squircle {
             h,
             v,
@@ -40,7 +40,7 @@ impl ExtendFrom<Squircle> for WithSvg<BuilderImpl> {
 }
 
 impl ExtendFrom<PathBuilder> for WithSvg<BuilderImpl> {
-    fn extend(&mut self, path: PathBuilder) {
+    fn extend_from(&mut self, path: PathBuilder) {
         let PathBuilder {
             points,
             offset,
@@ -100,7 +100,7 @@ impl ExtendFrom<PathBuilder> for WithSvg<BuilderImpl> {
                             WindingOrder::calculate(prev, current, next),
                         );
 
-                    self.extend(corner_path_params);
+                    self.extend_from(corner_path_params);
                 }
 
                 self.line_to(points[len - 1].convert());
