@@ -48,10 +48,9 @@ impl Connection {
         let builder: WithSvg<BuilderImpl> = PathBuilder::from((self.0, true)).into();
         let path = builder.build();
 
-        let mut events = path.iter().filter(|&e| match e {
-            Event::Begin { .. } | Event::End { .. } => false,
-            _ => true,
-        });
+        let mut events = path
+            .iter()
+            .filter(|&e| !matches!(e, Event::Begin { .. } | Event::End { .. }));
 
         match edge_type {
             EdgeType::Straight => {
