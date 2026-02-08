@@ -1,7 +1,6 @@
 [package]
 name = "makepad_examples"
 publish = false
-autoexamples = false
 edition.workspace = true
 
 [dependencies]
@@ -14,3 +13,4 @@ glam.workspace = true
 [[example]]
 name = "makepad_canvas"
 path = "src/canvas.rs"
+test = false
