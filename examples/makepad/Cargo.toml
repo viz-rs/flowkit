@@ -13,4 +13,3 @@ glam.workspace = true
 [[example]]
 name = "makepad_canvas"
 path = "src/canvas.rs"
-test = false
