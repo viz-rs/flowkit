@@ -81,30 +81,21 @@ opt-level = 3
 
 # Enable more optimization in the release profile at the cost of compile time.
 [profile.release]
-# good for profilers
-# debug = true
-# This leads to better optimizations and smaller binaries (and is the default in Wasm anyways).
-panic = "abort"
-# Compile the entire crate as one unit.
-# Slows compile times, marginal improvements.
-codegen-units = 1
-# Do a second optimization pass over the entire program, including dependencies.
-# Slows compile times, marginal improvements.
-lto = "thin"
+# debug = true      # Good for profilers
+opt-level = "z"     # Optimize for size (lean binary for distribution)
+lto = true          # Link-time optimization
+codegen-units = 1   # Single codegen unit for better optimization
+panic = "abort"     # Smaller binary, no unwinding overhead
+strip = true        # Remove debug symbols
 
 # Optimize for size in the web-release profile to reduce load times and bandwidth usage on web.
 [profile.web-release]
-# Removes panic handling code.
-panic = 'abort'
-# Default to release profile values.
-inherits = "release"
-# Optimize with size in mind (also try "z", sometimes it is better).
-# Slightly slows compile times, great improvements to file size and runtime performance.
-opt-level = "z"
-# Strip all debugging information from the binary to slightly reduce file size.
-strip = "debuginfo"
-lto = true
-codegen-units = 1
+inherits = "release" # Default to release profile
+opt-level = "z"      # Optimize for size (lean binary for distribution)
+lto = true           # Link-time optimization
+codegen-units = 1    # Single codegen unit for better optimization
+panic = "abort"      # Smaller binary, no unwinding overhead
+strip = true         # Remove debug symbols
 
 # Optimize for build time in CI.
 [profile.ci]

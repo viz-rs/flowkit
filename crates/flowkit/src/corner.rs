@@ -200,6 +200,26 @@ impl CornerPathParams {
     }
 }
 
+/// A squircle's corner.
+///
+/// ```text
+///              p          center
+///              | ctrl1     /
+///              | | ctrl2  /
+///              | | | to  /
+/// horizontal ↔ ↓ ↓ ↓ ↓  /
+///            ╭────────╮
+///            |        │ ← to
+///            |        │ ←--- ctrl2
+///            |        │ ←------ ctrl1
+///            |        │ ←--------- p
+///            ╰────────╯ ↕ vertical
+/// ```
+///
+/// | Direction  |  Points                 |
+/// |------------|-------------------------|
+/// | horizontal | `[p, ctrl1, ctrl2, to]` |
+/// | vertical   | `[to, ctrl2, ctrl1, p]` |
 #[derive(Clone, Copy)]
 pub struct Squircle {
     pub h: [Vec2; 4],
