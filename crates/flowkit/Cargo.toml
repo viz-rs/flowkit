@@ -2,7 +2,7 @@
 name = "flowkit"
 description = "A universal UI workflow library"
 keywords = ["viz", "ui", "workflow", "flow"]
-version = "0.4.3"
+version = "0.4.4"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true

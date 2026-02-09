@@ -2,7 +2,7 @@
 name = "gpui_flowkit"
 description = "A UI workflow library for gpui"
 keywords = ["gpui", "workflow", "flow"]
-version = "0.2.3"
+version = "0.2.4"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true
@@ -13,7 +13,7 @@ repository.workspace = true
 default = []
 
 [dependencies]
-flowkit = { path = "../flowkit", version = "0.4.2" }
+flowkit = { path = "../flowkit", version = "0.4.4" }
 
 gpui.workspace = true
 glam.workspace = true

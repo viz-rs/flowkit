@@ -2,7 +2,7 @@
 name = "bevy_flowkit"
 description = "A UI workflow library for Bevy Engine"
 keywords = ["bevy", "workflow", "flow"]
-version = "0.4.3"
+version = "0.4.4"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true
@@ -13,7 +13,7 @@ repository.workspace = true
 default = []
 
 [dependencies]
-flowkit = { path = "../flowkit", version = "0.4.3" }
+flowkit = { path = "../flowkit", version = "0.4.4" }
 lyon_path.workspace = true
 bevy_math.workspace = true
 bevy_prototype_lyon.workspace = true

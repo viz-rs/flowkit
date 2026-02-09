@@ -13,7 +13,7 @@ repository.workspace = true
 default = []
 
 [dependencies]
-flowkit = { path = "../flowkit", version = "0.4.3" }
+flowkit = { path = "../flowkit", version = "0.4.4" }
 makepad_tessellation = { path = "../makepad_tessellation", version = "0.1.0" }
 
 lyon_path.workspace = true
