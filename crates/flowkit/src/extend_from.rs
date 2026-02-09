@@ -23,19 +23,23 @@ impl ExtendFrom<Squircle> for WithSvg<BuilderImpl> {
             sweep_angle,
         } = squircle;
 
-        let [p0, ctrl1, ctrl2, to0] = h.convert();
-        let [to1, ctrl4, ctrl3, p1] = v.convert();
+        // horizontal
+        let [p, ctrl1, ctrl2, to] = h.convert();
+        self.line_to(p);
+        self.cubic_bezier_to(ctrl1, ctrl2, to);
 
-        self.line_to(p0);
-        self.cubic_bezier_to(ctrl1, ctrl2, to0);
+        // corner
         self.arc(
             center.convert(),
             radii.convert(),
             Angle::radians(sweep_angle),
             Angle::radians(0.0),
         );
-        self.line_to(p1);
-        self.cubic_bezier_to(ctrl3, ctrl4, to1);
+
+        // vertical
+        let [to, ctrl2, ctrl1, p] = v.convert();
+        self.line_to(p);
+        self.cubic_bezier_to(ctrl1, ctrl2, to);
     }
 }
 

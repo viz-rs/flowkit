@@ -35,9 +35,10 @@ pub const fn visible_area(min: Vec2, max: Vec2) -> f32 {
 
 /// Selects a vector based on a flag.
 ///
-/// If the flag is 1.0, returns the maximum of the base and max vectors.
-/// If the flag is -1.0, returns the minimum of the base and min vectors.
-/// Otherwise, returns the base vector.
+/// | Flags = `[flag_x, flag_y]` | Return = `[x, y]`                                 |
+/// | :------------------------: | ------------------------------------------------- |
+/// | `flag_x`                   | `x = select_single(flag_x, base.x, min.x, max.x)` |
+/// | `flag_y`                   | `y = select_single(flag_y, base.y, min.y, max.y)` |
 #[inline]
 pub const fn select(flags: Vec2, base: Vec2, min: Vec2, max: Vec2) -> Vec2 {
     Vec2 {
@@ -48,9 +49,11 @@ pub const fn select(flags: Vec2, base: Vec2, min: Vec2, max: Vec2) -> Vec2 {
 
 /// Selects a single value based on a flag.
 ///
-/// If the flag is 1.0, returns the maximum of the base and max values.
-/// If the flag is -1.0, returns the minimum of the base and min values.
-/// Otherwise, returns the base value.
+/// | Flag   | Return          |
+/// | :----: | --------------- |
+/// |  1.0   | `base.max(max)` |
+/// | -1.0   | `base.min(min)` |
+/// | other  | `base`          |
 #[inline]
 pub const fn select_single(flag: f32, base: f32, min: f32, max: f32) -> f32 {
     if flag == 1.0 {
