@@ -21,10 +21,10 @@ pub struct PathBuilder {
 impl PathBuilder {
     /// If `Y-Axis` is down, should set `flip_y` to `true`.
     ///
-    /// │ Y-Axis │ Framework                  │
-    /// │--------│----------------------------│
-    /// │ Up     │ Bevy world                 │
-    /// │ Down   │ egui, gpui, makepad screen │
+    /// | Y-Axis | Framework                  |
+    /// | ------ | -------------------------- |
+    /// | Up     | Bevy world                 |
+    /// | Down   | egui, gpui, makepad screen |
     #[inline]
     pub fn new(
         source: EdgePoint,
@@ -188,10 +188,10 @@ impl PathBuilder {
 impl From<(EdgePath, bool)> for PathBuilder {
     /// If `Y-Axis` is down, should set `flip_y` to `true`.
     ///
-    /// │ Y-Axis │ Framework                  │
-    /// │--------│----------------------------│
-    /// │ Up     │ Bevy world                 │
-    /// │ Down   │ egui, gpui, makepad screen │
+    /// | Y-Axis | Framework                  |
+    /// | ------ | -------------------------- |
+    /// | Up     | Bevy world                 |
+    /// | Down   | egui, gpui, makepad screen |
     fn from((path, flip_y): (EdgePath, bool)) -> Self {
         Self::new(
             path.source,

@@ -9,7 +9,7 @@ use crate::vertex::VertexBuffers;
 /// 1. Extracts 4 vertices' positions from two triangles.
 ///
 /// | Indices   | Ordered       | Sequence      |
-/// |-----------|---------------|---------------|
+/// | --------- | ------------- | ------------- |
 /// | `quad_2d` | `0 1 2 2 3 0` | `a b c c d a` |
 /// | `buffers` | `3 2 0 3 0 1` | `d c a d a b` |
 ///
@@ -20,7 +20,7 @@ use crate::vertex::VertexBuffers;
 /// ```
 ///
 /// | Index | Seq   | Indice | Vertex        | Corner       |
-/// |-------|-------|--------|---------------|--------------|
+/// | ----- | ----- | ------ | ------------- | ------------ |
 /// | 0     | 2,4   | a      | `vertices[a]` | top-left     |
 /// | 1     | 5     | b      | `vertices[b]` | top-right    |
 /// | 2     | 1     | c      | `vertices[c]` | bottom-right |
@@ -40,7 +40,7 @@ impl DrawPath for DrawLine {
     fn draw_with(&mut self, cx: &mut Cx2d, buffers: VertexBuffers, color: Vec4, width: f64) {
         let VertexBuffers { indices, vertices } = buffers;
 
-        debug_assert_eq!(vertices.len() >= 3, true);
+        debug_assert!(vertices.len() >= 3);
         debug_assert_eq!(indices.len() % 3, 0);
 
         for chunks in indices.chunks(6) {
