@@ -31,11 +31,11 @@ impl WindingOrder {
 
     /// Casts the winding order to a floating-point value.
     ///
-    /// | Winding order    | Value |
-    /// | ---------------- |:-----:|
-    /// | CounterClockwise |  1.0  |
-    /// | Clockwise        | -1.0  |
-    /// | Invalid          |  0.0  |
+    /// │ Winding order    │ Value │
+    /// │ ---------------- │:-----:│
+    /// │ CounterClockwise │  1.0  │
+    /// │ Clockwise        │ -1.0  │
+    /// │ Invalid          │  0.0  │
     #[inline]
     pub const fn as_f32(self) -> f32 {
         match self {

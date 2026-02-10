@@ -40,6 +40,7 @@ impl DrawPath for DrawLine {
     fn draw_with(&mut self, cx: &mut Cx2d, buffers: VertexBuffers, color: Vec4, width: f64) {
         let VertexBuffers { indices, vertices } = buffers;
 
+        debug_assert_eq!(vertices.len() >= 3, true);
         debug_assert_eq!(indices.len() % 3, 0);
 
         for chunks in indices.chunks(6) {
