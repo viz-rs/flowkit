@@ -97,14 +97,14 @@ impl ExtendFrom<PathBuilder> for WithSvg<BuilderImpl> {
                     // @todo(fundon): should be a configuration
                     let corner_radius = max_radius.min(half_offset);
 
-                    let corner_path_params =
-                        CornerPathParams::new(corner_radius, max_radius, smoothness).squircle(
+                    let squircle = CornerPathParams::new(corner_radius, max_radius, smoothness)
+                        .squircle(
                             current,
                             Corner::calculate(prev, current, next),
                             WindingOrder::calculate(prev, current, next),
                         );
 
-                    self.extend_from(corner_path_params);
+                    self.extend_from(squircle);
                 }
 
                 self.line_to(points[len - 1].convert());
