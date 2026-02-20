@@ -33,7 +33,7 @@ pub const fn visible_area(min: Vec2, max: Vec2) -> f32 {
     x * y
 }
 
-/// Selects a vector based on a flag.
+/// Selects a vector based on a flags.
 ///
 /// | Flags = `[flag_x, flag_y]` | Return = `[x, y]`                                 |
 /// | :------------------------: | ------------------------------------------------- |
