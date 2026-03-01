@@ -1,4 +1,4 @@
-// Copyright 2026 the Flowkit Authors
+// Copyright © Fangdun Tsai <fundon@pindash.io>
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
 use lyon_path::{BuilderImpl, builder::WithSvg};
