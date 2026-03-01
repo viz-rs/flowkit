@@ -1,3 +1,6 @@
+// Copyright 2026 the Flowkit Authors
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 use lyon_path::{BuilderImpl, builder::WithSvg};
 use makepad_tessellation::prelude::*;
 

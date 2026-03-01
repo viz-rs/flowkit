@@ -1,3 +1,6 @@
+// Copyright 2026 the Flowkit Authors
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 #![doc = include_str!("../README.md")]
 #![forbid(unsafe_code)]
 
