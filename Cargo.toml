@@ -32,8 +32,8 @@ makepad_tessellation = { path = "crates/makepad_tessellation" }
 bevy_moon = { git = "https://github.com/viz-rs/viz.git" }
 
 # bevy
-bevy = { version = "0.18.0", default-features = false, features = ["pan_camera", "2d"] }
-bevy_math = "0.18.0"
+bevy = { version = "0.19.0", default-features = false, features = ["pan_camera", "2d"] }
+bevy_math = "0.19.0"
 
 # other
 smallvec = { version = "1.0", features = ["union", "const_new"] }
